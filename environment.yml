@@ -1,0 +1,23 @@
+
+name: ipim-t
+
+channels:
+  - pytorch
+  - conda-forge
+
+dependencies:
+
+  - python=3.9
+  - pip
+
+  - pip:
+      - torch
+      - numpy
+      - pandas
+      - scikit-learn
+      - rasterio
+      - geopandas
+      - scipy
+      - matplotlib
+      - pyyaml
+      - tqdm

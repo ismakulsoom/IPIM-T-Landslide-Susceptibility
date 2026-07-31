@@ -1,0 +1,44 @@
+
+# IPIM-T configuration
+
+data:
+
+  env:
+    data/demo/X_env_demo.npy
+
+  insar:
+    data/demo/X_insar_demo.npy
+
+  label:
+    data/demo/y_demo.npy
+
+
+
+model:
+
+  transformer_dim: 128
+
+  transformer_heads: 8
+
+  transformer_layers: 4
+
+  dropout: 0.25
+
+
+
+training:
+
+  batch_size: 32
+
+  epochs: 50
+
+  learning_rate: 0.001
+
+
+
+physics:
+
+  enabled: true
+
+  lambda: 0.1
+
