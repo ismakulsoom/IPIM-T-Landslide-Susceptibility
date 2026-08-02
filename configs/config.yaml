@@ -1,0 +1,48 @@
+# IPIM-T Configuration File - COMPLETE
+
+# Data paths
+ENV_DATA: "data/demo/X_env_demo.npy"
+INSAR_DATA: "data/demo/X_insar_demo.npy"
+LABEL_DATA: "data/demo/y_demo.npy"
+
+# Model parameters - MATCH YOUR DATA SHAPE
+INPUT_ENV_DIM: 15
+INPUT_INSAR_DIM: 8
+HIDDEN_DIM: 256
+TRANSFORMER_DIM: 128
+TRANSFORMER_HEADS: 8
+TRANSFORMER_LAYERS: 6
+NUM_HEADS: 8
+NUM_LAYERS: 6
+DROPOUT_RATE: 0.2
+ACTIVATION: "relu"
+
+# Physics-informed parameters
+USE_PHYSICS: True
+PHYSICS_LAMBDA: 0.1
+COHESION_INIT: 20.0
+FRICTION_INIT: 30.0            # <-- ADDED: Friction angle (degrees)
+DENSITY_INIT: 2000.0
+COHESION_MIN: 5.0              # <-- ADDED: Minimum cohesion (kPa)
+COHESION_MAX: 50.0             # <-- ADDED: Maximum cohesion (kPa)
+FRICTION_MIN: 20.0             # <-- ADDED: Minimum friction angle (°)
+FRICTION_MAX: 45.0             # <-- ADDED: Maximum friction angle (°)
+
+# Training parameters
+BATCH_SIZE: 32
+LEARNING_RATE: 0.001
+EPOCHS: 100
+WEIGHT_DECAY: 0.0001
+NUM_WORKERS: 0
+
+# InSAR parameters
+INSAR_FEATURES: 8
+
+# Indices for both streams
+ENV_INDICES: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+TOPO_INDICES: [0, 1, 2, 3, 4, 5, 6, 7]
+
+# Other settings
+DEVICE: "cuda"
+SEED: 42
+NUM_CLASSES: 1
